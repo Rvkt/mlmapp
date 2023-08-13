@@ -20,13 +20,13 @@ class RegisterScreenState extends State<RegisterScreen> {
       ),
       body: Stack(
         children: [
-          Container(
-            padding: const EdgeInsets.only(left: 35, top: 30),
-            child: Text(
-              'Create\nAccount',
-              style: TextStyle(color: Colors.grey.shade900, fontSize: 33),
-            ),
-          ),
+          // Container(
+          //   padding: const EdgeInsets.only(left: 35, top: 30),
+          //   child: Text(
+          //     'Create\nAccount',
+          //     style: TextStyle(color: Colors.grey.shade900, fontSize: 33),
+          //   ),
+          // ),
           SingleChildScrollView(
             child: Container(
               padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.28),
@@ -36,7 +36,9 @@ class RegisterScreenState extends State<RegisterScreen> {
                   Container(
                     margin: const EdgeInsets.only(left: 35, right: 35),
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
+                        Image.asset('assets/images/logo_black.png'),
                         TextField(
                           style: TextStyle(color: Colors.grey.shade900),
                           decoration: InputDecoration(
@@ -135,11 +137,12 @@ class RegisterScreenState extends State<RegisterScreen> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            const Text(
+
+                            Text(
                               "Already Have an account!!",
                               style: TextStyle(
                                 fontSize: 15,
-                                color: Color(0xff4c505b),
+                                color: Colors.grey.shade700,
                               ),
                             ),
                             TextButton(

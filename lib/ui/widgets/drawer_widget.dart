@@ -24,42 +24,66 @@ class AppDrawer extends StatelessWidget {
             ),
           ),
           ListTile(
-            leading: const Icon(Icons.store),
+            leading: Icon(
+              Icons.store,
+              color: Colors.grey.shade900,
+            ),
             title: const Text('Shopping'),
             onTap: () => print('Shopping Button pressed'),
           ),
           ListTile(
-            leading: const Icon(Icons.confirmation_number),
+            leading: Icon(
+              Icons.confirmation_number,
+              color: Colors.grey.shade900,
+            ),
             title: const Text('Leather'),
             onTap: () => print('Leather Button pressed'),
           ),
           ListTile(
-            leading: const Icon(Icons.airplane_ticket),
+            leading: Icon(
+              Icons.airplane_ticket,
+              color: Colors.grey.shade900,
+            ),
             title: const Text('Holiday Offers'),
             onTap: () => print('Holiday Button pressed'),
           ),
           ListTile(
-            leading: const Icon(Icons.assignment_ind),
+            leading: Icon(
+              Icons.assignment_ind,
+              color: Colors.grey.shade900,
+            ),
             title: const Text('Certificates'),
             onTap: () => print('Certificates Button pressed'),
           ),
           ListTile(
-            leading: const Icon(Icons.image),
+            leading: Icon(
+              Icons.image,
+              color: Colors.grey.shade900,
+            ),
             title: const Text('Gallery'),
             onTap: () => print('Gallery Button pressed'),
           ),
           ListTile(
-            leading: const Icon(Icons.videocam),
+            leading: Icon(
+              Icons.videocam,
+              color: Colors.grey.shade900,
+            ),
             title: const Text('Zoom meetings'),
             onTap: () => print('Zoom Button pressed'),
           ),
           ListTile(
-            leading: const Icon(Icons.settings),
+            leading: Icon(
+              Icons.settings,
+              color: Colors.grey.shade900,
+            ),
             title: const Text('Settings'),
             onTap: () => print('Settings Button pressed'),
           ),
           ListTile(
-            leading: const Icon(Icons.exit_to_app),
+            leading: Icon(
+              Icons.exit_to_app,
+              color: Colors.grey.shade900,
+            ),
             title: const Text('Logout'),
             onTap: () => print('Logout Button pressed'),
           ),

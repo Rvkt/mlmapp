@@ -7,15 +7,8 @@ class PageOne extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      child: const Center(
-        child: Text(
-          'App Name',
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: 75,
-            fontFamily: 'Pacifico',
-          ),
-        ),
+      child: Center(
+        child: Image.asset('assets/images/logo_black.png'),
       ),
     );
   }
