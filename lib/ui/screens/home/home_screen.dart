@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mlmapp/ui/screens/home/bank_action_btn.dart';
+import 'package:mlmapp/ui/screens/home/info_list.dart';
+import 'package:mlmapp/ui/screens/home/profile_card.dart';
 import 'package:mlmapp/ui/widgets/drawer_widget.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -14,191 +17,57 @@ class _HomeScreenState extends State<HomeScreen> {
 
   // property for pages
   final screens = [
-    Center(
-        child: Column(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    Column(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: <Widget>[
-        CircleAvatar(
-          radius: 50,
-          backgroundColor: Colors.grey.shade400,
-          child: const CircleAvatar(
-            backgroundImage: AssetImage('assets/images/George_Jones.jpg'),
-            radius: 45,
+        const SizedBox(height: 16.0),
+        const ProfileCard(),
+        Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Row(
+            children: [
+              Expanded(
+                child: BankActionButton(
+                  icon: Icons.book,
+                  title: "Passbook",
+                  onTap: () {},
+                ),
+              ),
+              const SizedBox(width: 16.0),
+              Expanded(
+                child: BankActionButton(
+                  icon: Icons.card_membership,
+                  title: "Withdraw",
+                  onTap: () {},
+                ),
+              ),
+              const SizedBox(width: 16.0),
+              Expanded(
+                child: BankActionButton(
+                  icon: Icons.share,
+                  title: "Refer",
+                  onTap: () {},
+                ),
+              ),
+            ],
           ),
         ),
-        const Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Text(
-              'Username',
-              style:
-                  TextStyle(fontSize: 30.0, color: Colors.black87, fontFamily: 'Roboto', fontWeight: FontWeight.bold),
-            ),
-            Text(
-              'Assistant Manager',
-              style:
-                  TextStyle(fontSize: 20.0, color: Colors.black87, fontFamily: 'Roboto', fontWeight: FontWeight.w400),
-            ),
-          ],
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(20.0), //or 15.0
-              child: Container(
-                height: 100.0,
-                width: 100.0,
-                color: Colors.blue.shade100,
-                child: const Icon(
-                  Icons.book,
-                  color: Colors.white,
-                  size: 50.0,
-                ),
-              ),
-            ),
-            ClipRRect(
-              borderRadius: BorderRadius.circular(20.0), //or 15.0
-              child: Container(
-                height: 100.0,
-                width: 100.0,
-                color: Colors.blue.shade100,
-                child: const Icon(
-                  Icons.card_membership,
-                  color: Colors.white,
-                  size: 50.0,
-                ),
-              ),
-            ),
-            ClipRRect(
-              borderRadius: BorderRadius.circular(20.0), //or 15.0
-              child: Container(
-                height: 100.0,
-                width: 100.0,
-                color: Colors.blue.shade100,
-                child: const Icon(
-                  Icons.share,
-                  color: Colors.white,
-                  size: 50.0,
-                ),
-              ),
-            ),
-          ],
-        ),
-        Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            Card(
-              margin: const EdgeInsets.fromLTRB(30.0, 0, 30.0, 15),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  vertical: 5.0,
-                  horizontal: 5.0,
-                ),
-                child: ListTile(
-                  leading: Icon(
-                    Icons.account_tree,
-                    size: 30.0,
-                    color: Colors.grey.shade900,
-                  ),
-                  title: Text(
-                    'Team Tree View',
-                    style: TextStyle(
-                      color: Colors.grey.shade900,
-                      fontFamily: 'Roboto',
-                      fontSize: 20.0,
-                      letterSpacing: 2.5,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Card(
-              margin: const EdgeInsets.fromLTRB(30.0, 0, 30.0, 15),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  vertical: 5.0,
-                  horizontal: 5.0,
-                ),
-                child: ListTile(
-                  leading: Icon(
-                    Icons.account_tree,
-                    size: 30.0,
-                    color: Colors.grey.shade900,
-                  ),
-                  title: Text(
-                    'Level Status Graph',
-                    style: TextStyle(
-                      color: Colors.grey.shade900,
-                      fontFamily: 'Roboto',
-                      fontSize: 20.0,
-                      letterSpacing: 2.5,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Card(
-              margin: const EdgeInsets.fromLTRB(30.0, 0, 30.0, 15),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  vertical: 5.0,
-                  horizontal: 5.0,
-                ),
-                child: ListTile(
-                  leading: Icon(
-                    Icons.account_tree,
-                    size: 30.0,
-                    color: Colors.grey.shade900,
-                  ),
-                  title: Text(
-                    'Level Status with BV',
-                    style: TextStyle(
-                      color: Colors.grey.shade900,
-                      fontFamily: 'Roboto',
-                      fontSize: 20.0,
-                      letterSpacing: 2.5,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Card(
-              margin: const EdgeInsets.fromLTRB(30.0, 0, 30.0, 0),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  vertical: 5.0,
-                  horizontal: 5.0,
-                ),
-                child: ListTile(
-                  leading: Icon(
-                    Icons.account_tree,
-                    size: 30.0,
-                    color: Colors.grey.shade900,
-                  ),
-                  title: Text(
-                    'TSP Achiever',
-                    style: TextStyle(
-                      color: Colors.grey.shade900,
-                      fontFamily: 'Roboto',
-                      fontSize: 20.0,
-                      letterSpacing: 2.5,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ],
+        const Expanded(
+          child: InfoList(),
         ),
       ],
-    )),
+    ),
     const Center(
       child: Text(
         'Profile',
+        style: TextStyle(
+          fontSize: 72,
+        ),
+      ),
+    ),
+    const Center(
+      child: Text(
+        'Wallet',
         style: TextStyle(
           fontSize: 72,
         ),
@@ -225,6 +94,10 @@ class _HomeScreenState extends State<HomeScreen> {
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
             label: "Profile",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_balance_wallet),
+            label: "Wallet",
           ),
         ],
       ),

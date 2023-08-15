@@ -1,4 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:mlmapp/ui/screens/certificates/certificates_screen.dart';
+import 'package:mlmapp/ui/screens/gallery/gallery_screen.dart';
+import 'package:mlmapp/ui/screens/holidayOffers/holiday_offers_screen.dart';
+import 'package:mlmapp/ui/screens/leatherBazaar/leather_bazaar_screen.dart';
+import 'package:mlmapp/ui/screens/logout/logout_screen.dart';
+import 'package:mlmapp/ui/screens/settings/settings_screen.dart';
+import 'package:mlmapp/ui/screens/shopping/shopping_screen.dart';
+import 'package:mlmapp/ui/screens/zoomMeetings/zoom_meetings_screen.dart';
+
+import '../screens/achievements/achievements_screen.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({Key? key}) : super(key: key);
@@ -23,72 +33,121 @@ class AppDrawer extends StatelessWidget {
               ),
             ),
           ),
-          ListTile(
-            leading: Icon(
-              Icons.store,
-              color: Colors.grey.shade900,
-            ),
-            title: const Text('Shopping'),
-            onTap: () => print('Shopping Button pressed'),
+          MenuItem(
+            icon: Icons.store,
+            title: 'Shopping',
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const ShoppingScreen(),
+                ),
+              );
+            },
           ),
-          ListTile(
-            leading: Icon(
-              Icons.confirmation_number,
-              color: Colors.grey.shade900,
-            ),
-            title: const Text('Leather'),
-            onTap: () => print('Leather Button pressed'),
+          MenuItem(
+            icon: Icons.store,
+            title: 'Leather Bazaar',
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const LeatherBazaarScreen(),
+                ),
+              );
+            },
           ),
-          ListTile(
-            leading: Icon(
-              Icons.airplane_ticket,
-              color: Colors.grey.shade900,
-            ),
-            title: const Text('Holiday Offers'),
-            onTap: () => print('Holiday Button pressed'),
+          MenuItem(
+            icon: Icons.store,
+            title: 'Holiday Offers',
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const HolidayOffersScreen(),
+                ),
+              );
+            },
           ),
-          ListTile(
-            leading: Icon(
-              Icons.assignment_ind,
-              color: Colors.grey.shade900,
-            ),
-            title: const Text('Certificates'),
-            onTap: () => print('Certificates Button pressed'),
+          MenuItem(
+            icon: Icons.store,
+            title: 'Certificates',
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const CertificatesScreen(),
+                ),
+              );
+            },
           ),
-          ListTile(
-            leading: Icon(
-              Icons.image,
-              color: Colors.grey.shade900,
-            ),
-            title: const Text('Gallery'),
-            onTap: () => print('Gallery Button pressed'),
+          MenuItem(
+            icon: Icons.store,
+            title: 'Gallery',
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const GalleryScreen(),
+                ),
+              );
+            },
           ),
-          ListTile(
-            leading: Icon(
-              Icons.videocam,
-              color: Colors.grey.shade900,
-            ),
-            title: const Text('Zoom meetings'),
-            onTap: () => print('Zoom Button pressed'),
+          MenuItem(
+            icon: Icons.store,
+            title: 'Zoom Meetings',
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const ZoomMeetingsScreen(),
+                ),
+              );
+            },
           ),
-          ListTile(
-            leading: Icon(
-              Icons.settings,
-              color: Colors.grey.shade900,
-            ),
-            title: const Text('Settings'),
-            onTap: () => print('Settings Button pressed'),
+          MenuItem(
+            icon: Icons.store,
+            title: 'Settings',
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const SettingsScreen(),
+                ),
+              );
+            },
           ),
-          ListTile(
-            leading: Icon(
-              Icons.exit_to_app,
-              color: Colors.grey.shade900,
-            ),
-            title: const Text('Logout'),
-            onTap: () => print('Logout Button pressed'),
+          MenuItem(
+            icon: Icons.store,
+            title: 'Logout',
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const LogoutScreen(),
+                ),
+              );
+            },
           ),
         ],
       ),
+    );
+  }
+}
+
+class MenuItem extends StatelessWidget {
+  final IconData icon;
+  final String title;
+  final Function()? onTap;
+
+  const MenuItem({
+    Key? key,
+    required this.icon,
+    required this.title,
+    required this.onTap,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      leading: Icon(
+        icon,
+        color: Colors.grey.shade900,
+      ),
+      title: Text(title),
+      onTap: onTap,
     );
   }
 }
