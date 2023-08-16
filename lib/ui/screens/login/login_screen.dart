@@ -61,7 +61,7 @@ class LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     const SizedBox(
-                      height: 10,
+                      height:8,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,

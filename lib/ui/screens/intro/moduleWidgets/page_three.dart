@@ -7,7 +7,7 @@ class PageThree extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      child: Image.asset('assets/images/1_2.jpg'),
+      child: Image.asset('assets/images/1_2.png'),
     );
   }
 }

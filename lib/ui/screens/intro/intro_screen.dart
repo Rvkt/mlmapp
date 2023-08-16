@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mlmapp/ui/screens/intro/moduleWidgets/page_four.dart';
-import 'package:mlmapp/ui/screens/intro/moduleWidgets/page_one.dart';
+// import 'package:mlmapp/ui/screens/intro/moduleWidgets/page_one.dart';
 import 'package:mlmapp/ui/screens/intro/moduleWidgets/page_three.dart';
 import 'package:mlmapp/ui/screens/intro/moduleWidgets/page_two.dart';
 
@@ -14,7 +14,7 @@ class IntroScreen extends StatefulWidget {
 class _IntroScreenState extends State<IntroScreen> {
   int selectedPage = 0;
   List<Widget> pages = const [
-    PageOne(),
+    // PageOne(),
     PageTwo(),
     PageThree(),
     PageFour(),
@@ -50,7 +50,7 @@ class _IntroScreenState extends State<IntroScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  selectedPage != 0
+                  selectedPage >= 0
                       ? TextButton(
                           onPressed: () {
                             Navigator.pushNamedAndRemoveUntil(
@@ -77,8 +77,8 @@ class _IntroScreenState extends State<IntroScreen> {
                               );
                             },
                             child: Container(
-                              height: 20.0,
-                              width: 20.0,
+                              height: 10.0,
+                              width: 10.0,
                               decoration: BoxDecoration(
                                 color: selectedPage == index ? Theme.of(context).primaryColor : Colors.transparent,
                                 shape: BoxShape.circle,

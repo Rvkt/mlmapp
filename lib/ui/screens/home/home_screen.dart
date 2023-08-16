@@ -17,6 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   // property for pages
   final screens = [
+    // Home Section
     Column(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: <Widget>[
@@ -28,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               Expanded(
                 child: BankActionButton(
-                  icon: Icons.book,
+                  imageUrl: 'assets/icons/passbook.png',
                   title: "Passbook",
                   onTap: () {},
                 ),
@@ -36,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(width: 16.0),
               Expanded(
                 child: BankActionButton(
-                  icon: Icons.card_membership,
+                  imageUrl: 'assets/icons/withdrawal.png',
                   title: "Withdraw",
                   onTap: () {},
                 ),
@@ -44,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(width: 16.0),
               Expanded(
                 child: BankActionButton(
-                  icon: Icons.share,
+                  imageUrl: 'assets/icons/refer.png',
                   title: "Refer",
                   onTap: () {},
                 ),
@@ -57,6 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ],
     ),
+    // Profile Section
     const Center(
       child: Text(
         'Profile',
@@ -65,6 +67,8 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
     ),
+
+    // Wallet Section
     const Center(
       child: Text(
         'Wallet',
@@ -80,6 +84,19 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Home Screen"),
+        actions: <Widget>[
+          Row(
+            children: [
+              IconButton(
+                icon: const Icon(Icons.notifications),
+                onPressed: () {
+                  print('notifications');
+                },
+
+              ),
+            ],
+          ),
+        ],
       ),
       drawer: const AppDrawer(),
       body: screens[index],
@@ -92,12 +109,12 @@ class _HomeScreenState extends State<HomeScreen> {
             label: "Home",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: "Profile",
-          ),
-          BottomNavigationBarItem(
             icon: Icon(Icons.account_balance_wallet),
             label: "Wallet",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: "Profile",
           ),
         ],
       ),

@@ -8,8 +8,6 @@ import 'package:mlmapp/ui/screens/settings/settings_screen.dart';
 import 'package:mlmapp/ui/screens/shopping/shopping_screen.dart';
 import 'package:mlmapp/ui/screens/zoomMeetings/zoom_meetings_screen.dart';
 
-import '../screens/achievements/achievements_screen.dart';
-
 class AppDrawer extends StatelessWidget {
   const AppDrawer({Key? key}) : super(key: key);
 
@@ -17,24 +15,10 @@ class AppDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: ListView(
-        padding: EdgeInsets.zero,
+        padding: const EdgeInsets.fromLTRB(10, 100, 10, 0),
         children: [
-          UserAccountsDrawerHeader(
-            accountName: const Text('UserName'),
-            accountEmail: const Text('user@email.com'),
-            currentAccountPicture: CircleAvatar(
-              child: ClipOval(
-                child: Image.asset(
-                  'assets/images/George_Jones.jpg',
-                  width: 100,
-                  height: 100,
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-          ),
           MenuItem(
-            icon: Icons.store,
+            imageUrl: 'assets/icons/Shops.png',
             title: 'Shopping',
             onTap: () {
               Navigator.of(context).push(
@@ -45,7 +29,7 @@ class AppDrawer extends StatelessWidget {
             },
           ),
           MenuItem(
-            icon: Icons.store,
+            imageUrl: 'assets/icons/Leather.png',
             title: 'Leather Bazaar',
             onTap: () {
               Navigator.of(context).push(
@@ -56,7 +40,7 @@ class AppDrawer extends StatelessWidget {
             },
           ),
           MenuItem(
-            icon: Icons.store,
+            imageUrl: 'assets/icons/Holiday.png',
             title: 'Holiday Offers',
             onTap: () {
               Navigator.of(context).push(
@@ -67,7 +51,7 @@ class AppDrawer extends StatelessWidget {
             },
           ),
           MenuItem(
-            icon: Icons.store,
+            imageUrl: 'assets/icons/Certificate.png',
             title: 'Certificates',
             onTap: () {
               Navigator.of(context).push(
@@ -78,7 +62,7 @@ class AppDrawer extends StatelessWidget {
             },
           ),
           MenuItem(
-            icon: Icons.store,
+            imageUrl: 'assets/icons/Picture.png',
             title: 'Gallery',
             onTap: () {
               Navigator.of(context).push(
@@ -89,7 +73,7 @@ class AppDrawer extends StatelessWidget {
             },
           ),
           MenuItem(
-            icon: Icons.store,
+            imageUrl: 'assets/icons/Zoom.png',
             title: 'Zoom Meetings',
             onTap: () {
               Navigator.of(context).push(
@@ -100,7 +84,7 @@ class AppDrawer extends StatelessWidget {
             },
           ),
           MenuItem(
-            icon: Icons.store,
+            imageUrl: 'assets/icons/Settings.png',
             title: 'Settings',
             onTap: () {
               Navigator.of(context).push(
@@ -111,7 +95,7 @@ class AppDrawer extends StatelessWidget {
             },
           ),
           MenuItem(
-            icon: Icons.store,
+            imageUrl: 'assets/icons/Logout.png',
             title: 'Logout',
             onTap: () {
               Navigator.of(context).push(
@@ -128,13 +112,16 @@ class AppDrawer extends StatelessWidget {
 }
 
 class MenuItem extends StatelessWidget {
-  final IconData icon;
+  final String imageUrl;
+
+  // final IconData icon;
   final String title;
   final Function()? onTap;
 
   const MenuItem({
     Key? key,
-    required this.icon,
+    required this.imageUrl,
+    // required this.icon,
     required this.title,
     required this.onTap,
   }) : super(key: key);
@@ -142,9 +129,9 @@ class MenuItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: Icon(
-        icon,
-        color: Colors.grey.shade900,
+      leading: Image.asset(
+        imageUrl,
+        width: 30,
       ),
       title: Text(title),
       onTap: onTap,

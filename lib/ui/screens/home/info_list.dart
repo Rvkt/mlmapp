@@ -13,10 +13,10 @@ class InfoList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
       children: [
         InfoListItem(
-          icon: Icons.account_tree,
+          imageUrl: 'assets/icons/Bar.png',
           title: "Royalty Graph",
           onTap: () {
             Navigator.of(context).push(
@@ -27,10 +27,10 @@ class InfoList extends StatelessWidget {
           },
         ),
         const SizedBox(
-          height: 10,
+          height:8,
         ),
         InfoListItem(
-          icon: Icons.account_tree,
+          imageUrl: 'assets/icons/Diagram.png',
           title: "Team Tree View",
           onTap: () {
             Navigator.of(context).push(
@@ -41,10 +41,10 @@ class InfoList extends StatelessWidget {
           },
         ),
         const SizedBox(
-          height: 10,
+          height:8,
         ),
         InfoListItem(
-          icon: Icons.account_tree,
+          imageUrl: 'assets/icons/NextLevel.png',
           title: "Level Status Graph",
           onTap: () {
             Navigator.of(context).push(
@@ -55,10 +55,10 @@ class InfoList extends StatelessWidget {
           },
         ),
         const SizedBox(
-          height: 10,
+          height:8,
         ),
         InfoListItem(
-          icon: Icons.account_tree,
+          imageUrl: 'assets/icons/Gain.png',
           title: "Level Status With BV",
           onTap: () {
             Navigator.of(context).push(
@@ -69,10 +69,10 @@ class InfoList extends StatelessWidget {
           },
         ),
         const SizedBox(
-          height: 10,
+          height:8,
         ),
         InfoListItem(
-          icon: Icons.account_tree,
+          imageUrl: 'assets/icons/Award.png',
           title: "Achievements",
           onTap: () {
             Navigator.of(context).push(
@@ -83,10 +83,10 @@ class InfoList extends StatelessWidget {
           },
         ),
         const SizedBox(
-          height: 10,
+          height:8,
         ),
         InfoListItem(
-          icon: Icons.account_tree,
+          imageUrl: 'assets/icons/SupportTicket.png',
           title: "Tickets",
           onTap: () {
             Navigator.of(context).push(

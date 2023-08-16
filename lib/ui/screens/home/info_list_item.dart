@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 
 class InfoListItem extends StatelessWidget {
-  final IconData icon;
+  final String imageUrl;
+
+  // final IconData icon;
   final String title;
   final Function()? onTap;
 
   const InfoListItem({
     Key? key,
-    required this.icon,
+    // required this.icon,
     required this.title,
     required this.onTap,
+    required this.imageUrl,
   }) : super(key: key);
 
   @override
@@ -20,10 +23,9 @@ class InfoListItem extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: ListTile(
-            leading: Icon(
-              icon,
-              size: 30.0,
-              color: Colors.grey.shade900,
+            leading: Image.asset(
+              imageUrl,
+              width: 40,
             ),
             title: Text(
               title,

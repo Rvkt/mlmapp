@@ -7,7 +7,7 @@ class PageFour extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      child: Image.asset('assets/images/shopping_leather_nuts.png'),
+      child: Image.asset('assets/images/2_1.png'),
     );
   }
 }

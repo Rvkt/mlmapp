@@ -2,6 +2,12 @@
   "configVersion": 2,
   "packages": [
     {
+      "name": "animated_splash_screen",
+      "rootUri": "file:///C:/Users/Rvknt/AppData/Local/Pub/Cache/hosted/pub.dev/animated_splash_screen-1.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "args",
       "rootUri": "file:///C:/Users/Rvknt/AppData/Local/Pub/Cache/hosted/pub.dev/args-2.4.2",
       "packageUri": "lib/",
@@ -94,6 +100,12 @@
     {
       "name": "meta",
       "rootUri": "file:///C:/Users/Rvknt/AppData/Local/Pub/Cache/hosted/pub.dev/meta-1.9.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "page_transition",
+      "rootUri": "file:///C:/Users/Rvknt/AppData/Local/Pub/Cache/hosted/pub.dev/page_transition-2.0.9",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -200,7 +212,7 @@
       "languageVersion": "3.1"
     }
   ],
-  "generated": "2023-08-14T13:10:52.284737Z",
+  "generated": "2023-08-16T15:45:31.939227Z",
   "generator": "pub",
   "generatorVersion": "3.1.0-315.0.dev"
 }

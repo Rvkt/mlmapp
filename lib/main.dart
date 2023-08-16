@@ -1,3 +1,4 @@
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:mlmapp/ui/screens/home/home_screen.dart';
 import 'package:mlmapp/ui/screens/intro/intro_screen.dart';
@@ -17,7 +18,6 @@ class MlmApp extends StatefulWidget {
 }
 
 class _MlmAppState extends State<MlmApp> {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -25,7 +25,14 @@ class _MlmAppState extends State<MlmApp> {
       theme: ThemeData(
         useMaterial3: false,
       ),
-      home: const IntroScreen(),
+      home: AnimatedSplashScreen(
+        splashIconSize: double.maxFinite,
+        splash: Image.asset(
+          'assets/images/logo_black.png',
+        ),
+        nextScreen: const IntroScreen(),
+        splashTransition: SplashTransition.fadeTransition,
+      ),
       routes: {
         'login': (context) => const LoginScreen(),
         'register': (context) => const RegisterScreen(),

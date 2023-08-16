@@ -9,7 +9,7 @@ class PageTwo extends StatelessWidget {
     return Container(
       alignment: Alignment.center,
       // child: SvgPicture.asset('assets/images/.svg'),
-      child: Image.asset('assets/images/1_1.jpg'),
+      child: Image.asset('assets/images/1_1.png'),
     );
   }
 }
