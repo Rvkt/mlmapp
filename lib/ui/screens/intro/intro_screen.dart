@@ -72,7 +72,7 @@ class _IntroScreenState extends State<IntroScreen> {
                             onTap: () {
                               controller.animateToPage(
                                 index,
-                                duration: const Duration(milliseconds: 300),
+                                duration: const Duration(milliseconds: 150),
                                 curve: Curves.bounceIn,
                               );
                             },
@@ -96,7 +96,7 @@ class _IntroScreenState extends State<IntroScreen> {
                         setState(() {
                           selectedPage++;
                           controller.nextPage(
-                            duration: const Duration(milliseconds: 300),
+                            duration: const Duration(milliseconds: 150),
                             curve: Curves.bounceIn,
                           );
                         });

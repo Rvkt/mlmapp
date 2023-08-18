@@ -26,6 +26,12 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "carousel_slider",
+      "rootUri": "file:///C:/Users/Rvknt/AppData/Local/Pub/Cache/hosted/pub.dev/carousel_slider-4.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "characters",
       "rootUri": "file:///C:/Users/Rvknt/AppData/Local/Pub/Cache/hosted/pub.dev/characters-1.3.0",
       "packageUri": "lib/",
@@ -134,6 +140,12 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "smooth_page_indicator",
+      "rootUri": "file:///C:/Users/Rvknt/AppData/Local/Pub/Cache/hosted/pub.dev/smooth_page_indicator-1.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "source_span",
       "rootUri": "file:///C:/Users/Rvknt/AppData/Local/Pub/Cache/hosted/pub.dev/source_span-1.10.0",
       "packageUri": "lib/",
@@ -212,7 +224,7 @@
       "languageVersion": "3.1"
     }
   ],
-  "generated": "2023-08-16T15:45:31.939227Z",
+  "generated": "2023-08-18T07:52:15.767860Z",
   "generator": "pub",
   "generatorVersion": "3.1.0-315.0.dev"
 }

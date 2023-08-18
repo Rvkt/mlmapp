@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:mlmapp/ui/screens/login/loginForm/sponsor_form.dart';
+
+import 'loginForm/user_form.dart';
+
+enum LoginType { sponsor, user }
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -8,146 +13,128 @@ class LoginScreen extends StatefulWidget {
 }
 
 class LoginScreenState extends State<LoginScreen> {
+  LoginType loginType = LoginType.sponsor;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
         children: <Widget>[
-          Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Image.asset('assets/images/logo_black.png'),
-              const SizedBox(
-                height: 60,
-              ),
-              Text(
-                'Welcome Back',
-                textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.grey.shade900, fontSize: 25, fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              Container(
-                padding: const EdgeInsets.all(20),
-                margin: const EdgeInsets.only(left: 20, right: 20),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          Container(
+            margin: const EdgeInsets.fromLTRB(0, 50, 0, 0),
+            padding: const EdgeInsets.symmetric(horizontal: 30),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text(
+                  'User Login',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 40,
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.all(8),
+                  margin: const EdgeInsets.all(8),
+                  child: CircleAvatar(
+                    radius: 40,
+                    child: ClipOval(
+                      child: Image.asset('assets/images/George_Jones.jpg'),
+                    ),
+                  ),
+                ),
+                Text(
+                  "You have been missed for a long time",
+                  style: TextStyle(
+                    color: Colors.grey.shade900,
+                    fontWeight: FontWeight.normal,
+                    fontSize: 16,
+                  ),
+                ),
+                const SizedBox(
+                  height: 12,
+                ),
+                Row(
                   children: [
-                    TextField(
-                      style: const TextStyle(color: Colors.black),
-                      decoration: InputDecoration(
-                        fillColor: Colors.grey.shade100,
-                        filled: true,
-                        hintText: "Email/Sponsor ID",
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    TextField(
-                      style: const TextStyle(),
-                      obscureText: true,
-                      decoration: InputDecoration(
-                        fillColor: Colors.grey.shade100,
-                        filled: true,
-                        hintText: "Password",
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      height:8,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        TextButton(
-                          onPressed: () {},
-                          child: const Text(
-                            'Forgot Password?',
-                            style: TextStyle(
-                              decoration: TextDecoration.none,
-                              color: Color(0xff4c505b),
-                              fontSize: 18,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 40,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        ElevatedButton(
-                          onPressed: () {
-                            Navigator.pushNamedAndRemoveUntil(
-                              context,
-                              'home',
-                                  (route) => false,
-                            );
+                    Expanded(
+                      child: ListTile(
+                        leading: Radio(
+                          value: LoginType.sponsor,
+                          groupValue: loginType,
+                          onChanged: (LoginType? value) {
+                            setState(() {
+                              loginType = value!;
+                            });
                           },
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.blue.shade900,
-                            foregroundColor: Colors.white,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(40.0),
-                            ),
-                            padding: const EdgeInsets.symmetric(horizontal: 50.0, vertical: 10.0),
-                          ),
-                          child: const Text(
-                            'Sign in',
-                            style: TextStyle(
-                              fontSize: 30,
-                              fontWeight: FontWeight.w700,
-                            ),
+                        ),
+                        title: Text(
+                          "User with Sponsor ID",
+                          style: TextStyle(
+                            fontSize: 12.0,
                           ),
                         ),
-                      ],
+                      ),
                     ),
-
+                    Expanded(
+                      child: ListTile(
+                        leading: Radio(
+                          value: LoginType.user,
+                          groupValue: loginType,
+                          onChanged: (LoginType? value) {
+                            setState(() {
+                              loginType = value!;
+                            });
+                          },
+                        ),
+                        title: Text(
+                          "New User",
+                          style: TextStyle(
+                            fontSize: 12.0,
+                          ),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
-              ),
-              const Spacer(
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                // crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Text(
-                    "Don't Have an account!!",
-                    style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.grey.shade700,
-                    ),
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, 'register');
-                    },
-                    style: const ButtonStyle(),
-                    child: const Text(
-                      'Register',
-                      textAlign: TextAlign.left,
+                Container(
+                  padding: const EdgeInsets.all(20),
+                  margin: const EdgeInsets.only(left: 20, right: 20),
+                  child: loginType == LoginType.sponsor ? const SponsorForm() : const UserForm(),
+                ),
+                const Spacer(),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  // crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text(
+                      "Don't Have an account!!",
                       style: TextStyle(
-                        decoration: TextDecoration.none,
+                        fontSize: 15,
                         fontWeight: FontWeight.bold,
-                        color: Colors.red,
-                        fontSize: 18,
+                        color: Colors.grey.shade700,
                       ),
                     ),
-                  ),
-                ],
-              ),
-            ],
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, 'register');
+                      },
+                      style: const ButtonStyle(),
+                      child: const Text(
+                        'Register',
+                        textAlign: TextAlign.left,
+                        style: TextStyle(
+                          decoration: TextDecoration.none,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.red,
+                          fontSize: 18,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ],
       ),

@@ -37,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(width: 16.0),
               Expanded(
                 child: BankActionButton(
-                  imageUrl: 'assets/icons/withdrawal.png',
+                  imageUrl: 'assets/icons/withdraw.png',
                   title: "Withdraw",
                   onTap: () {},
                 ),
@@ -61,7 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
     // Profile Section
     const Center(
       child: Text(
-        'Profile',
+        'Wallet',
         style: TextStyle(
           fontSize: 72,
         ),
@@ -71,7 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
     // Wallet Section
     const Center(
       child: Text(
-        'Wallet',
+        'Profile',
         style: TextStyle(
           fontSize: 72,
         ),

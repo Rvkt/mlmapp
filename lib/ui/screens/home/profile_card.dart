@@ -18,7 +18,7 @@ class ProfileCard extends StatelessWidget {
         const Text(
           'Username',
           style:
-          TextStyle(fontSize: 30.0, color: Colors.black87, fontFamily: 'Roboto', fontWeight: FontWeight.bold),
+          TextStyle(fontSize: 15.0, color: Colors.black87, fontFamily: 'Roboto', fontWeight: FontWeight.bold),
         ),
         const Text(
           'Assistant Manager',
