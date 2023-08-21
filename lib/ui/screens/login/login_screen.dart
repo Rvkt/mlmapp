@@ -21,7 +21,7 @@ class LoginScreenState extends State<LoginScreen> {
       body: Stack(
         children: <Widget>[
           Container(
-            margin: const EdgeInsets.fromLTRB(0, 50, 0, 0),
+            margin: const EdgeInsets.fromLTRB(0, 150, 0, 0),
             padding: const EdgeInsets.symmetric(horizontal: 30),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -68,10 +68,11 @@ class LoginScreenState extends State<LoginScreen> {
                             });
                           },
                         ),
-                        title: Text(
-                          "User with Sponsor ID",
+                        title: const Text(
+                          "Sponsor ID",
                           style: TextStyle(
                             fontSize: 12.0,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
                       ),
@@ -87,10 +88,11 @@ class LoginScreenState extends State<LoginScreen> {
                             });
                           },
                         ),
-                        title: Text(
+                        title: const Text(
                           "New User",
                           style: TextStyle(
                             fontSize: 12.0,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
                       ),

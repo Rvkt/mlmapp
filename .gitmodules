@@ -1,0 +1,3 @@
+[submodule "appname"]
+	path = appname
+	url = https://github.com/Rvkt/appname.git

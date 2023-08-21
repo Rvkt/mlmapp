@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mlmapp/ui/widgets/custom_appbar.dart';
 import 'package:mlmapp/ui/widgets/drawer_widget.dart';
@@ -70,6 +71,7 @@ class ShoppingScreen extends StatelessWidget {
         body: Container(
           alignment: Alignment.center,
           child: const SliderP(),
+          // child: const GridB(),
         ),
       ),
     );

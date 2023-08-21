@@ -26,7 +26,7 @@ class _MlmAppState extends State<MlmApp> {
         useMaterial3: false,
       ),
       home: AnimatedSplashScreen(
-        splashIconSize: double.maxFinite,
+        // splashIconSize: double.maxFinite,
         splash: Image.asset(
           'assets/images/logo_black.png',
         ),

@@ -76,8 +76,6 @@ class HolidayOffersScreen extends StatelessWidget {
 }
 
 
-
-
 class SliderP extends StatefulWidget {
   const SliderP({Key? key}) : super(key: key);
 

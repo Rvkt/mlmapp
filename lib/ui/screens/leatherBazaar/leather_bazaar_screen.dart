@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:mlmapp/ui/widgets/drawer_widget.dart';
 import '../../widgets/custom_appbar.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mlmapp/ui/screens/leatherBazaar/my_icons.dart';
 
 class LeatherBazaarScreen extends StatelessWidget {
   const LeatherBazaarScreen({Key? key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +69,14 @@ class LeatherBazaarScreen extends StatelessWidget {
       drawer: const AppDrawer(),
       body: Container(
         alignment: Alignment.center,
-        child: const Text("LeatherBazaarScreen"),
+        child: Column(
+          children: [
+            const Text("LeatherBazaarScreen"),
+            SvgPicture.asset(iconRefer),
+            const Text("LeatherBazaarScreen"),
+            //  svg
+          ],
+        ),
       ),
     );
   }

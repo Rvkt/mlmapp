@@ -27,6 +27,7 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
+    - assets/refer.svg
     - assets/images/
     - assets/icons/
     - assets/images/test/

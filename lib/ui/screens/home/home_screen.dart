@@ -71,7 +71,23 @@ class _HomeScreenState extends State<HomeScreen> {
     // Wallet Section
     const Center(
       child: Text(
-        'Profile',
+        'QR Code',
+        style: TextStyle(
+          fontSize: 72,
+        ),
+      ),
+    ),
+    const Center(
+      child: Text(
+        'Tickets',
+        style: TextStyle(
+          fontSize: 72,
+        ),
+      ),
+    ),
+    const Center(
+      child: Text(
+        'Account',
         style: TextStyle(
           fontSize: 72,
         ),
@@ -114,7 +130,15 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
-            label: "Profile",
+            label: "QR Code",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: "Tickets",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: "Account",
           ),
         ],
       ),
